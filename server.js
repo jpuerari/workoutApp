@@ -23,8 +23,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-const routes = require('./routes');
-app.use(routes)
+const apiRoutes = require('./routes/apiRoutes');
+app.use(apiRoutes)
+
+const htmlRoutes = require('./routes/htmlRoutes');
+app.use(htmlRoutes)
+
+// const routes = require('./routes');
+// app.use(routes)
 
 
 //port
