@@ -18,7 +18,7 @@ router.get("/api/workouts", function(req, res){
 //findOneAndUpdate or findByIdAndUpdate or UpdateOne
 //db.Library.findOneAndUpdate({}, { $push: { books: _id } }, { new: true })
 
-router.put("/workouts/:id", (req, res) => {
+router.put("/api/workouts/:id", (req, res) => {
     console.log(req.params, req.body)
     Workout.findByIdAndUpdate(req.params.id, {
         $push: {
@@ -36,7 +36,7 @@ router.put("/workouts/:id", (req, res) => {
       });
   });
   
-  router.get("/workouts", (req, res) => {
+  router.get("/api/workouts", (req, res) => {
     console.log("Here")
     Workout.find({})
       .then(dbWorkout => {
@@ -47,7 +47,7 @@ router.put("/workouts/:id", (req, res) => {
       });
   })
   
-  router.get("/workouts/range", (req, res) => {
+  router.get("/api/workouts/range", (req, res) => {
     Workout.find({})
       .limit(10)
       .then(dbWorkout => {
