@@ -21,5 +21,12 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js",
+    "heroku-postbuild": "npm run seed"
+  },
 }
