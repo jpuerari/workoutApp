@@ -20,7 +20,7 @@ router.get("/api/workouts", function(req, res){
 
 router.put("/api/workouts/:id", (req, res) => {
     console.log(req.params, req.body)
-    Workout.findByIdAndUpdate(req.params.id, {
+    db.Workout.findByIdAndUpdate(req.params.id, {
         $push: {
           exercises: req.body
         }
@@ -32,29 +32,29 @@ router.put("/api/workouts/:id", (req, res) => {
         res.json(dbWorkout);
       })
       .catch(err => {
-        res.status.json(err);
+        res.json(err);
       });
   });
   
   router.get("/api/workouts", (req, res) => {
     console.log("Here")
-    Workout.find({})
+    db.Workout.find({})
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
       .catch(err => {
-        res.status.json(err);
+        res.json(err);
       });
   })
   
   router.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
+    db.Workout.find({})
       .limit(10)
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
       .catch(err => {
-        res.status.json(err);
+        res.json(err);
       });
   })
 
