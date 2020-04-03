@@ -32,7 +32,6 @@ router.put("/workouts/:id", (req, res) => {
         res.json(dbWorkout);
       })
       .catch(err => {
-        console.log(err)
         res.status.json(err);
       });
   });
@@ -44,7 +43,6 @@ router.put("/workouts/:id", (req, res) => {
         res.json(dbWorkout);
       })
       .catch(err => {
-        console.log(err)
         res.status.json(err);
       });
   })
@@ -59,6 +57,5 @@ router.put("/workouts/:id", (req, res) => {
         res.status.json(err);
       });
   })
-
 
 module.exports = router;
